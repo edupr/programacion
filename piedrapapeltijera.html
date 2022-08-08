@@ -6,6 +6,21 @@
       function aleatorio(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
       }
+
+      function eleccion(jugada) {
+        let resultado = "";
+        if (jugada == 1) {
+          resultado = "Piedra 🪨";
+        } else if (jugada == 2) {
+          resultado = "Papel 📃";
+        } else if (jugada == 3) {
+          resultado = "Tijera ✂️";
+        } else {
+          resultado = "MAL ELEGIDO";
+        }
+        return resultado;
+      }
+
       // 1 = piedra,  2 = papel,  3 = tijera
       let jugador = 0;
       let min = 1;
@@ -13,23 +28,9 @@
       let pc = aleatorio(min, max);
       jugador = prompt("Elige 1 para piedra, 2 para papel y 3 para tijera");
       // alert("Elegiste " + jugador);
-      if (jugador == 1) {
-        alert("Elegiste 🪨");
-      } else if (jugador == 2) {
-        alert("Elegiste 📃");
-      } else if (jugador == 3) {
-        alert("Elegiste ✂️");
-      } else {
-        alert("Elegiste PERDER");
-      }
 
-      if (pc == 1) {
-        alert("PC 🪨");
-      } else if (pc == 2) {
-        alert("PC 📃");
-      } else if (pc == 3) {
-        alert("PC ✂️");
-      }
+      alert("PC elige: " + eleccion(pc));
+      alert("Tú eliges: " + eleccion(jugador));
 
       // COMBATE
       if (pc == jugador) {
