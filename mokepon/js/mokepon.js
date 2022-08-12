@@ -16,8 +16,32 @@ function seleccionarMascotaJugador() {
   } else if (inputRatigueya.checked) {
     spanMascotaJugador.innerHTML = "Ratigueya";
   } else {
-    alert("Debes seleccionar una mascota! 🙉");
+    alert("¡Debes seleccionar una mascota! 🙉");
   }
+
+  seleccionarMascotaEnemigo();
+}
+
+function seleccionarMascotaEnemigo() {
+  let ataqueAleatorio = aleatorio(1, 3);
+  let spanMascotaEnemigo = document.getElementById("mascota-enemigo");
+
+  if (ataqueAleatorio == 1) {
+    // Hipodoge
+    spanMascotaEnemigo.innerHTML = "Hipodoge";
+  } else if (ataqueAleatorio == 2) {
+    // Capipepo
+    spanMascotaEnemigo.innerHTML = "Capipepo";
+  } else if (ataqueAleatorio == 3) {
+    // Ratigueya
+    spanMascotaEnemigo.innerHTML = "Ratigueya";
+  } else {
+    alert("Error en el ataque del Enemigo");
+  }
+}
+
+function aleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 window.addEventListener("load", iniciarJuego);
