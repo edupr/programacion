@@ -17,8 +17,8 @@ function eleccion(jugada) {
 }
 
 // 1 = piedra,  2 = papel,  3 = tijera
-let jugador = 0;
-let pc = 0;
+let ataqueJugador = 0;
+let ataqueEnemigo = 0;
 let triunfos = 0;
 let perdidas = 0;
 
@@ -27,22 +27,22 @@ while (triunfos < 3 && perdidas < 3) {
   let max = 3;
   let pc = aleatorio(min, max);
 
-  jugador = prompt("Elige 1 para piedra, 2 para papel y 3 para tijera");
+  ataqueJugador = prompt("Elige 1 para piedra, 2 para papel y 3 para tijera");
   // alert("Elegiste " + jugador);
 
   alert("PC elige: " + eleccion(pc));
-  alert("Tú eliges: " + eleccion(jugador));
+  alert("Tú eliges: " + eleccion(ataqueJugador));
 
   // COMBATE
-  if (pc == jugador) {
+  if (pc == ataqueJugador) {
     alert("EMPATE");
-  } else if (jugador == 1 && pc == 3) {
+  } else if (ataqueJugador == 1 && pc == 3) {
     alert("GANASTE");
     triunfos = triunfos + 1;
-  } else if (jugador == 2 && pc == 1) {
+  } else if (ataqueJugador == 2 && pc == 1) {
     alert("GANASTE");
     triunfos = triunfos + 1;
-  } else if (jugador == 3 && pc == 2) {
+  } else if (ataqueJugador == 3 && pc == 2) {
     alert("GANASTE");
     triunfos = triunfos + 1;
   } else {
