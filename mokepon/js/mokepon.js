@@ -75,6 +75,21 @@ function ataqueAleatorioEnemigo() {
   } else if (ataqueAleatorio == 3) {
     ataqueEnemigo = "TIERRA";
   }
+  crearMensaje();
+}
+
+function crearMensaje() {
+  console.log("crearMensaje");
+  let sectionMensajes = document.getElementById("mensajes");
+  let parrafo = document.createElement("p");
+  parrafo.innerHTML =
+    "Tu mascota atacó con " +
+    ataqueJugador +
+    ", la mascota del enemigo atacó con " +
+    ataqueEnemigo +
+    "- GANASTE 🍾.";
+
+  sectionMensajes.appendChild(parrafo);
 }
 
 function aleatorio(min, max) {
