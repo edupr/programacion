@@ -1,8 +1,15 @@
+* {
+  background-color: #8c8146;
+  font-family: fantasy;
+}
+
 .titulo {
-  color: honeydew;
-  width: 310px;
+  color: #f2f2f2;
+  width: 320px;
   height: 50px;
-  background-color: teal;
+  background-color: #a69e38;
+  padding: 16px;
+  font-size: xx-large;
 }
 
 #seleccionar-mascota {
@@ -10,4 +17,30 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.tarjeta-de-mokepon {
+  width: 160px;
+  height: 60px;
+  background: #95acbf;
+  padding: 20px 36px;
+  box-sizing: border-box;
+  margin: 10px;
+  border: 1px solid #6883a6;
+}
+
+input {
+}
+
+#boton-mascota {
+  display: flex;
+  background-color: #a69e38;
+  width: 120px;
+  height: 40px;
+  border: 1px solid #786e34;
+  padding: 8px 24px;
+  margin: 10px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
 }
