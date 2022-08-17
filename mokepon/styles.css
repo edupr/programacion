@@ -115,3 +115,10 @@ input {
   font-size: 0.9rem;
   font-weight: bold;
 }
+
+.ataques {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  justify-items: center;
+  justify-content: center;
+}
