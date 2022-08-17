@@ -1,8 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300&display=swap");
 
+:root {
+  --white: #f2f2f2;
+  --blue1: #d1eaff;
+  --blue2: #95acbf;
+  --blue3: #6883a6;
+  --blue4: #38485c;
+  --green1: #a69e38;
+  --green2: #786e34;
+}
+
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #6883a6;
+  background-color: var(--blue3);
   font-size: 1.2em;
 }
 
@@ -16,12 +26,12 @@ body {
 .titulo {
   font-family: "Fredoka One", cursive;
   font-size: 4rem;
-  color: #f2f2f2;
+  color: var(--white);
   font-size: 2.2em;
 }
 
 .subtitulo {
-  color: #d1eaff;
+  color: var(--blue1);
   font-size: 1.2em;
   /* border: 12px; */
 }
@@ -34,18 +44,17 @@ body {
 .tarjeta-de-mokepon {
   width: 200px;
   height: 160px;
-  background: #95acbf;
+  background: var(--blue2);
   padding: 20px 36px;
   box-sizing: border-box;
   margin: 10px;
-  border: 1px solid #6883a6;
+  border: 1px solid var(--blue3);
   border-radius: 12px;
   display: flex;
-  /* color: #6883a6; */
-  color: #38485c;
+  color: var(--blue4);
   justify-content: center;
   align-items: center;
-  box-shadow: 12px 12px 40px #38485c;
+  box-shadow: 12px 12px 40px var(--blue4);
   cursor: pointer;
 }
 
@@ -61,17 +70,17 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #a69e38;
+  background-color: var(--green1);
   width: 180px;
   height: 40px;
-  border: 1px solid #786e34;
+  border: 1px solid var(--green2);
   /* padding: 12px 24px; */
   margin-top: 16px;
   border-radius: 12px;
   text-align: center;
   font-weight: bold;
-  box-shadow: 12px 12px 40px #38485c;
-  color: #f2f2f2;
+  box-shadow: 12px 12px 40px var(--blue4);
+  color: var(--white);
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   cursor: pointer;
@@ -80,8 +89,8 @@ input {
 
 #boton-mascota:hover {
   cursor: pointer;
-  background-color: #f2f2f2;
-  color: #38485c;
+  background-color: var(--white);
+  color: var(--blue4);
   transform: scale(105%);
 }
 
@@ -93,13 +102,13 @@ input {
 .boton-de-ataque {
   justify-content: center;
   align-items: center;
-  background-color: #95acbf;
+  background-color: var(--blue2);
   width: 100px;
   height: 40px;
-  border: 1px solid #6883a6;
+  border: 1px solid var(--blue3);
   border-radius: 12px;
   font-weight: bold;
-  box-shadow: 12px 12px 40px #38485c;
+  box-shadow: 12px 12px 40px var(--blue4);
   margin: 8px;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
