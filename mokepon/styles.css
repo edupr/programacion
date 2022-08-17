@@ -75,4 +75,34 @@ input {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   cursor: pointer;
+  /* transition: all 0.2s ease-in-out; */
+}
+
+#boton-mascota:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+  color: #38485c;
+  transform: scale(105%);
+}
+
+#seleccionar-ataque {
+  flex-direction: column;
+  align-items: center;
+}
+
+.boton-de-ataque {
+  justify-content: center;
+  align-items: center;
+  background-color: #95acbf;
+  width: 100px;
+  height: 40px;
+  border: 1px solid #6883a6;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 12px 12px 40px #38485c;
+  margin: 8px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
