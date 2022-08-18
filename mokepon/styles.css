@@ -13,7 +13,6 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--blue3);
-  font-size: 1.2em;
 }
 
 #seleccionar-mascota {
@@ -27,16 +26,17 @@ body {
   font-family: "Fredoka One", cursive;
   font-size: 4rem;
   color: var(--white);
-  font-size: 2.2em;
+  font-size: 4em;
 }
 
 .subtitulo {
   color: var(--blue1);
-  font-size: 1.2em;
+  font-size: 2em;
   /* border: 12px; */
 }
 
-.tarjetas {
+.tarjetas,
+.tarjetas-ataques {
   display: flex;
   gap: 10px;
 }
@@ -62,8 +62,17 @@ body {
   width: 90px;
 }
 
+.tarjeta-de-mokepon:hover {
+  background: var(--blue1);
+  transform: scale(102%);
+}
+
 input {
   display: none;
+}
+
+input:checked + label {
+  background: var(--white);
 }
 
 #boton-mascota {
@@ -91,7 +100,7 @@ input {
   cursor: pointer;
   background-color: var(--white);
   color: var(--blue4);
-  transform: scale(105%);
+  transform: scale(110%);
 }
 
 #seleccionar-ataque {
@@ -103,8 +112,8 @@ input {
   justify-content: center;
   align-items: center;
   background-color: var(--blue2);
-  width: 100px;
-  height: 40px;
+  width: 140px;
+  height: 60px;
   border: 1px solid var(--blue3);
   border-radius: 12px;
   font-weight: bold;
@@ -116,9 +125,52 @@ input {
   font-weight: bold;
 }
 
+#mensajes {
+  width: 360px;
+  background: #eeeeee;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .ataques {
   display: grid;
-  grid-template-columns: 100px 100px;
+  grid-template-columns: 140px 140px;
   justify-items: center;
   justify-content: center;
+  font-family: "Poppins", cursive;
+  font-size: 1.4rem;
+  color: var(--white);
+}
+
+#vidas-jugador,
+#vidas-enemigo {
+  font-size: 32px;
+  margin-bottom: 0;
+}
+
+.ataques-jugador,
+.ataques-enemigo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .tarjetas,
+  .tarjetas-ataques {
+    flex-direction: column;
+  }
+  .tarjeta-de-mokepon {
+    width: 240px;
+    height: 100px;
+  }
+  /* .tarjetas-ataques {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } */
 }
