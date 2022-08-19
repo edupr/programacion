@@ -127,7 +127,7 @@ input:checked + label {
 
 #mensajes {
   width: 360px;
-  background: #eeeeee;
+  background: var(--white);
   padding: 20px;
   margin-top: 20px;
   border-radius: 20px;
