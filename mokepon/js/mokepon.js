@@ -31,6 +31,7 @@ class Mokepon {
     this.nombre = nombre;
     this.foto = foto;
     this.vida = vida;
+    this.ataques = [];
   }
 }
 
@@ -54,6 +55,28 @@ let ratigueya = new Mokepon(
 
 mokepones.push(hipodoge, capipepo, ratigueya);
 console.log("mokepones: ", mokepones);
+
+hipodoge.ataques.push(
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "🔥", id: "boton-fuego" },
+  { nombre: "🌱", id: "boton-tierra" }
+);
+capipepo.ataques.push(
+  { nombre: "🌱", id: "boton-tierra" },
+  { nombre: "🌱", id: "boton-tierra" },
+  { nombre: "🌱", id: "boton-tierra" },
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "🔥", id: "boton-fuego" }
+);
+ratigueya.ataques.push(
+  { nombre: "🔥", id: "boton-fuego" },
+  { nombre: "🔥", id: "boton-fuego" },
+  { nombre: "🔥", id: "boton-fuego" },
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "🌱", id: "boton-tierra" }
+);
 
 function iniciarJuego() {
   sectionSeleccionarAtaque.style.display = "none";
