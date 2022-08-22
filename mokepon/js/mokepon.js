@@ -19,6 +19,8 @@ const spanVidasEnemigo = document.getElementById("vidas-enemigo");
 const sectionMensajes = document.getElementById("resultado");
 const ataquesDelJugador = document.getElementById("ataques-del-jugador");
 const ataquesDelEnemigo = document.getElementById("ataques-del-enemigo");
+
+let mokepones = [];
 let ataqueJugador;
 let ataqueEnemigo;
 let vidasJugador = 3;
@@ -49,6 +51,9 @@ let ratigueya = new Mokepon(
   "./assets/mokepons_mokepon_ratigueya_attack.png",
   5
 );
+
+mokepones.push(hipodoge, capipepo, ratigueya);
+console.log("mokepones: ", mokepones);
 
 function iniciarJuego() {
   sectionSeleccionarAtaque.style.display = "none";
