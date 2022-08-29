@@ -47,6 +47,12 @@ class Mokepon {
     this.foto = foto;
     this.vida = vida;
     this.ataques = [];
+    this.x = 20;
+    this.y = 30;
+    this.ancho = 80;
+    this.alto = 80;
+    this.mapaFoto = new Image();
+    this.mapaFoto.src = foto;
   }
 }
 
@@ -117,15 +123,13 @@ function iniciarJuego() {
 
   botonReiniciar.addEventListener("click", reiniciarJuego);
 }
+
 function seleccionarMascotaJugador() {
   sectionSeleccionarMascota.style.display = "none";
   // sectionSeleccionarAtaque.style.display = "flex";
   console.log("sectionVerMapa");
   sectionVerMapa.style.display = "flex";
-  let imagenDeCapipepo = new Image();
-  imagenDeCapipepo.src = capipepo.foto;
-  // lienzo.fillRect(5, 15, 20, 40);
-  lienzo.drawImage(imagenDeCapipepo, 20, 40, 100, 100);
+  // lienzo.drawImage(imagenDeCapipepo, 20, 40, 100, 100);
 
   if (inputHipodoge.checked) {
     spanMascotaJugador.innerHTML = inputHipodoge.id;
@@ -254,7 +258,6 @@ function combate() {
   }
   revisarVidas();
 }
-
 function revisarVidas() {
   if (victoriasJugador == victoriasEnemigo) {
     crearMensajeFinal("¡¡Esto fue un EMPATE!!)");
@@ -285,4 +288,31 @@ function reiniciarJuego() {
 function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+function pintarPersonaje() {
+  lienzo.clearRect(0, 0, mapa.width, mapa.height);
+  lienzo.drawImage(
+    capipepo.mapaFoto,
+    capipepo.x,
+    capipepo.y,
+    capipepo.ancho,
+    capipepo.alto
+  );
+}
+function moverCapipepoDerecha() {
+  capipepo.x = capipepo.x + 5;
+  pintarPersonaje();
+}
+function moverCapipepoIzquierda() {
+  capipepo.x = capipepo.x - 5;
+  pintarPersonaje();
+}
+function moverCapipepoArriba() {
+  capipepo.y = capipepo.y - 5;
+  pintarPersonaje();
+}
+function moverCapipepoAbajo() {
+  capipepo.y = capipepo.y + 5;
+  pintarPersonaje();
+}
+
 window.addEventListener("load", iniciarJuego);
