@@ -40,6 +40,8 @@ let victoriasEnemigo = 0;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
 let lienzo = mapa.getContext("2d");
+let intervalo;
+let avance = 5;
 
 class Mokepon {
   constructor(nombre, foto, vida) {
@@ -53,6 +55,8 @@ class Mokepon {
     this.alto = 80;
     this.mapaFoto = new Image();
     this.mapaFoto.src = foto;
+    this.velocidadX = 0;
+    this.velocidadY = 0;
   }
 }
 
@@ -129,6 +133,7 @@ function seleccionarMascotaJugador() {
   // sectionSeleccionarAtaque.style.display = "flex";
   console.log("sectionVerMapa");
   sectionVerMapa.style.display = "flex";
+  intervalo = setInterval(pintarPersonaje, 20);
   // lienzo.drawImage(imagenDeCapipepo, 20, 40, 100, 100);
 
   if (inputHipodoge.checked) {
@@ -289,6 +294,8 @@ function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 function pintarPersonaje() {
+  capipepo.x = capipepo.x + capipepo.velocidadX;
+  capipepo.y = capipepo.y + capipepo.velocidadY;
   lienzo.clearRect(0, 0, mapa.width, mapa.height);
   lienzo.drawImage(
     capipepo.mapaFoto,
@@ -298,21 +305,21 @@ function pintarPersonaje() {
     capipepo.alto
   );
 }
-function moverCapipepoDerecha() {
-  capipepo.x = capipepo.x + 5;
-  pintarPersonaje();
+function moverDerecha() {
+  capipepo.velocidadX = avance;
 }
-function moverCapipepoIzquierda() {
-  capipepo.x = capipepo.x - 5;
-  pintarPersonaje();
+function moverIzquierda() {
+  capipepo.velocidadX = -avance;
 }
-function moverCapipepoArriba() {
-  capipepo.y = capipepo.y - 5;
-  pintarPersonaje();
+function moverArriba() {
+  capipepo.velocidadY = -avance;
 }
-function moverCapipepoAbajo() {
-  capipepo.y = capipepo.y + 5;
-  pintarPersonaje();
+function moverAbajo() {
+  capipepo.velocidadY = avance;
+}
+function detenerMovimiento() {
+  capipepo.velocidadX = 0;
+  capipepo.velocidadY = 0;
 }
 
 window.addEventListener("load", iniciarJuego);
