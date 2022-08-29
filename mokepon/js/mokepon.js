@@ -133,8 +133,7 @@ function seleccionarMascotaJugador() {
   // sectionSeleccionarAtaque.style.display = "flex";
   console.log("sectionVerMapa");
   sectionVerMapa.style.display = "flex";
-  intervalo = setInterval(pintarPersonaje, 20);
-  // lienzo.drawImage(imagenDeCapipepo, 20, 40, 100, 100);
+  iniciarMapa();
 
   if (inputHipodoge.checked) {
     spanMascotaJugador.innerHTML = inputHipodoge.id;
@@ -232,7 +231,6 @@ function indexAmbosOponentes(jugador, enemigo) {
   indexAtaqueJugador = ataqueJugador[jugador];
   indexAtaqueEnemigo = ataqueEnemigo[enemigo];
 }
-
 // Cambiamos el combate por Victorias y ya no por Vidas
 function combate() {
   for (let i = 0; i < ataqueJugador.length; i++) {
@@ -320,6 +318,31 @@ function moverAbajo() {
 function detenerMovimiento() {
   capipepo.velocidadX = 0;
   capipepo.velocidadY = 0;
+}
+function sePresionoUnaTecla(event) {
+  console.log(event.key);
+  switch (event.key) {
+    case "ArrowUp":
+      moverArriba();
+      break;
+    case "ArrowDown":
+      moverAbajo();
+      break;
+    case "ArrowRight":
+      moverDerecha();
+      break;
+    case "ArrowLeft":
+      moverIzquierda();
+      break;
+    default:
+      break;
+  }
+}
+function iniciarMapa() {
+  intervalo = setInterval(pintarPersonaje, 20);
+  // lienzo.drawImage(imagenDeCapipepo, 20, 40, 100, 100);
+  window.addEventListener("keydown", sePresionoUnaTecla);
+  window.addEventListener("keyup", detenerMovimiento);
 }
 
 window.addEventListener("load", iniciarJuego);
