@@ -57,8 +57,9 @@ app.post("/mokepon/:jugadorId", (req, res) => {
   if (jugadorIndex >= 0) {
     jugadores[jugadorIndex].asignarMokepon(mokepon);
   }
-  console.log("jugadores: ", jugadores);
-  console.log("jugadorId: ", jugadorId);
+
+  console.log(jugadores);
+  console.log(jugadorId);
   res.end();
 });
 
@@ -75,7 +76,8 @@ app.post("/mokepon/:jugadorId/posicion", (req, res) => {
     jugadores[jugadorIndex].actualizarPosicion(x, y);
   }
 
-  const enemigos = jugadores.filter((jugador) => jugadorId != jugador.id);
+  const enemigos =
+    jugadores.filter((jugador) => jugadorId !== jugador.id) || [];
 
   res.send({
     enemigos,
@@ -95,6 +97,14 @@ app.post("/mokepon/:jugadorId/ataques", (req, res) => {
   }
 
   res.end();
+});
+
+app.get("/mokepon/:jugadorId/ataques", (req, res) => {
+  const jugadorId = req.params.jugadorId || "";
+  const jugador = jugadores.find((jugador) => jugador.id === jugadorId);
+  res.send({
+    ataques: jugador.ataques || [],
+  });
 });
 
 app.listen(8080, () => {
